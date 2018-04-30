@@ -4,18 +4,19 @@ from flask_bootstrap import Bootstrap
 app = Flask(__name__)
 Bootstrap(app)
 
+pages = ['index', 'about', 'css'];
+
 @app.route('/')
 def index():
-    stuff=['guitars','coffee','cats']
-    return render_template('index.j2', stuff=stuff)
+    return render_template('index.j2', pages=pages)
 
 @app.route('/about')
 def about():
-    return render_template('about.j2')
+    return render_template('about.j2', pages=pages)
 
 @app.route('/css')
 def css():
-    return render_template('css.j2')
+    return render_template('css.j2', pages=pages)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

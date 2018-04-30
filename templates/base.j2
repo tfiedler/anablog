@@ -4,6 +4,11 @@
 	<title>You have reached the end of the Internet</title>
 	</head>
 	<body>
+		<center>
+		{% for page in pages %}
+			<a href="{{url_for(page)}}">{{page}}</a>
+		{% endfor %}
+		</center>
 		{% block body %}
 		{% endblock %}
 	</body>
