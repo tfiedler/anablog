@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 Bootstrap(app)
 
-pages = ['index', 'about', 'css'];
+pages = ['index', 'about'];
 
 @app.route('/')
 def index():
@@ -14,10 +14,6 @@ def index():
 @app.route('/about')
 def about():
     return render_template('about.j2', pages=pages)
-
-@app.route('/css')
-def css():
-    return render_template('css.j2', pages=pages)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

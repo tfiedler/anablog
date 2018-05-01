@@ -1,13 +1,25 @@
 {% block content %}
   <center>
+
+<h1><font color="blue" family="impact">anablog</font></h1>
+<h3><font color="red" family="impact">you have reached the end of the internet</font></h3>
+
+  </center>
+
+  <center>
+
     {% for page in pages %}
         <a href="{{url_for(page)}}">
 	<button type="button">{{page}}</button></a> &nbsp;&nbsp;
     {% endfor %}
+	<a href="https://github.com/tfiedler/anablog"><button type="button">Anablog github</button></a>
+
   </center>
+  <hr/>
 
   {% block body %}
   {% endblock %}
-		
+
+
 {% endblock %}		
 
